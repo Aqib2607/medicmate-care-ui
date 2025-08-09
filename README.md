@@ -32,7 +32,7 @@ To run this project locally, follow these steps:
 1.  **Clone the repository:**
 
     ```bash
-    git clone [repository_url](https://github.com/Aqib2607/medicmate-care-ui)
+    git clone https://github.com/Aqib2607/medicmate-care-ui
     cd medicmate-care-ui-master
     ```
 
