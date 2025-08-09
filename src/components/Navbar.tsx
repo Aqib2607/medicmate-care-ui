@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Heart, Menu, X, Globe } from "lucide-react";
+import { Heart, Menu, X, Globe, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -22,6 +22,7 @@ const Navbar = () => {
     { name: t('nav.blog'), path: "/blog" },
     { name: t('nav.about'), path: "/about" },
     { name: t('nav.contact'), path: "/contact" },
+    { name: t('nav.cart'), path: "/cart" },
   ];
 
   return (
@@ -55,6 +56,11 @@ const Navbar = () => {
 
           {/* Auth Buttons and Language Toggle */}
           <div className="hidden md:flex items-center space-x-4">
+            <Link to="/cart">
+              <Button variant="ghost" size="sm" className="flex items-center gap-1 px-2">
+                <ShoppingCart className="h-4 w-4" />
+              </Button>
+            </Link>
             <Button 
               variant="ghost" 
               size="sm" 
@@ -122,9 +128,14 @@ const Navbar = () => {
                 </Link>
                 <Link to="/register" onClick={() => setIsMenuOpen(false)}>
                   <Button size="sm" className="w-full">
-                    {t('nav.register')}
-                  </Button>
-                </Link>
+                {t('nav.register')}
+              </Button>
+            </Link>
+            <Link to="/cart" onClick={() => setIsMenuOpen(false)}>
+              <Button variant="ghost" size="sm" className="flex items-center justify-center gap-1 w-full">
+                <ShoppingCart className="h-4 w-4" />
+              </Button>
+            </Link>
               </div>
             </div>
           </div>
