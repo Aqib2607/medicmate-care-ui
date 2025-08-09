@@ -477,6 +477,12 @@ const enTranslations: Record<string, string> = {
   'medicine.diagnostic.helpChoosingTest.title': 'Need Help Choosing the Right Test?',
   'medicine.diagnostic.helpChoosingTest.description': 'Our healthcare professionals can help you determine which diagnostic tests are appropriate for your symptoms and health concerns.',
   'medicine.diagnostic.consultDoctor': 'Consult with a Doctor',
+  
+  // New medicine translations
+  'medicine.acetaminophen.usage': 'Pain reliever and fever reducer',
+  'medicine.acetaminophen.description': 'Safe and effective for treating mild to moderate pain and reducing fever.',
+  'medicine.aspirin.usage': 'Pain relief and blood thinner',
+  'medicine.aspirin.description': 'Reduces pain, inflammation, and risk of heart attack when used as prescribed.',
 
   // Cart
   'cart.title': 'Your Cart',
