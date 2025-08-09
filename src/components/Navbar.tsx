@@ -1,13 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Heart, Menu, X, Globe, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useCart } from "@/contexts/CartContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const { language, setLanguage, t } = useLanguage();
+  const { getTotalItems } = useCart();
 
   const isActive = (path: string) => location.pathname === path;
   
@@ -57,8 +60,16 @@ const Navbar = () => {
           {/* Auth Buttons and Language Toggle */}
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/cart">
-              <Button variant="ghost" size="sm" className="flex items-center gap-1 px-2">
+              <Button variant="ghost" size="sm" className="flex items-center gap-1 px-2 relative">
                 <ShoppingCart className="h-4 w-4" />
+                {getTotalItems() > 0 && (
+                  <Badge 
+                    variant="destructive" 
+                    className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs"
+                  >
+                    {getTotalItems()}
+                  </Badge>
+                )}
               </Button>
             </Link>
             <Button 
@@ -132,8 +143,16 @@ const Navbar = () => {
               </Button>
             </Link>
             <Link to="/cart" onClick={() => setIsMenuOpen(false)}>
-              <Button variant="ghost" size="sm" className="flex items-center justify-center gap-1 w-full">
+              <Button variant="ghost" size="sm" className="flex items-center justify-center gap-1 w-full relative">
                 <ShoppingCart className="h-4 w-4" />
+                {getTotalItems() > 0 && (
+                  <Badge 
+                    variant="destructive" 
+                    className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs"
+                  >
+                    {getTotalItems()}
+                  </Badge>
+                )}
               </Button>
             </Link>
               </div>

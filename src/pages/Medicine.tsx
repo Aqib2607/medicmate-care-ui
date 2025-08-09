@@ -9,9 +9,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search, Filter, Pill, Star, ShoppingCart, MessageSquare, Microscope, Calendar, Clock, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "@/hooks/use-toast";
 
 const MedicineAndDiagnosis = () => {
   const { t } = useLanguage();
+  const { addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState('allCategories');
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCondition, setSelectedCondition] = useState("");
@@ -164,6 +167,35 @@ const MedicineAndDiagnosis = () => {
     return matchesSearch && matchesCondition && matchesAvailability;
   });
 
+  const handleAddMedicineToCart = (medicine: any) => {
+    addToCart({
+      id: `medicine-${medicine.id}`,
+      name: medicine.name,
+      price: medicine.price,
+      type: 'medicine',
+      image: medicine.image,
+      description: medicine.description
+    });
+    toast({
+      title: t('cart.itemAdded'),
+      description: `${medicine.name} ${t('cart.addedToCart')}`,
+    });
+  };
+
+  const handleAddDiagnosticToCart = (test: any) => {
+    addToCart({
+      id: `diagnostic-${test.id}`,
+      name: t(test.nameKey),
+      price: test.price,
+      type: 'diagnostic',
+      description: t(test.descriptionKey)
+    });
+    toast({
+      title: t('cart.itemAdded'),
+      description: `${t(test.nameKey)} ${t('cart.addedToCart')}`,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background py-8">
       <div className="container mx-auto px-4">
@@ -298,7 +330,11 @@ const MedicineAndDiagnosis = () => {
                   </div>
 
                   <div className="flex flex-col space-y-2">
-                    <Button className="w-full" size="sm">
+                    <Button 
+                      className="w-full" 
+                      size="sm"
+                      onClick={() => handleAddMedicineToCart(medicine)}
+                    >
                       <ShoppingCart className="w-4 h-4 mr-2" />
                       {t('medicine.addToCart')}
                     </Button>
@@ -422,8 +458,12 @@ const MedicineAndDiagnosis = () => {
                       </div>
 
                       <div className="flex flex-col space-y-2">
-                          <Button className="w-full" size="sm">
-                            <Calendar className="w-4 h-4 mr-2" />
+                          <Button 
+                            className="w-full" 
+                            size="sm"
+                            onClick={() => handleAddDiagnosticToCart(test)}
+                          >
+                            <ShoppingCart className="w-4 h-4 mr-2" />
                             {t('medicine.addToCart')}
                           </Button>
                         <Button variant="outline" className="w-full" size="sm">

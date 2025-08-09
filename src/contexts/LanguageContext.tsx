@@ -478,6 +478,23 @@ const enTranslations: Record<string, string> = {
   'medicine.diagnostic.helpChoosingTest.description': 'Our healthcare professionals can help you determine which diagnostic tests are appropriate for your symptoms and health concerns.',
   'medicine.diagnostic.consultDoctor': 'Consult with a Doctor',
 
+  // Cart
+  'cart.title': 'Your Cart',
+  'cart.empty.title': 'Your cart is empty',
+  'cart.empty.description': 'Add some medicines or diagnostic tests to get started.',
+  'cart.continueShopping': 'Continue Shopping',
+  'cart.clearAll': 'Clear All',
+  'cart.orderSummary': 'Order Summary',
+  'cart.subtotal': 'Subtotal',
+  'cart.shipping': 'Shipping',
+  'cart.free': 'Free',
+  'cart.total': 'Total',
+  'cart.checkout': 'Proceed to Checkout',
+  'cart.medicine': 'Medicine',
+  'cart.diagnostic': 'Diagnostic Test',
+  'cart.itemAdded': 'Item Added',
+  'cart.addedToCart': 'has been added to your cart',
+
   // Diagnostic Test Categories
   'medicine.diagnostic.category.allCategories': 'All Categories',
   'medicine.diagnostic.category.bloodTest': 'Blood Test',
@@ -887,6 +904,23 @@ const bnTranslations: Record<string, string> = {
   'medicine.diagnostic.helpChoosingTest.description': 'আমাদের স্বাস্থ্যসেবা পেশাদাররা আপনার লক্ষণ এবং স্বাস্থ্য উদ্বেগের জন্য কোন ডায়াগনস্টিক পরীক্ষাগুলি উপযুক্ত তা নির্ধারণ করতে আপনাকে সাহায্য করতে পারে।',
   'medicine.diagnostic.askDoctor': 'ডাক্তারকে জিজ্ঞাসা করুন',
   'medicine.diagnostic.consultDoctor': 'ডাক্তারের সাথে পরামর্শ করুন',
+
+  // Cart
+  'cart.title': 'আপনার কার্ট',
+  'cart.empty.title': 'আপনার কার্ট খালি',
+  'cart.empty.description': 'শুরু করতে কিছু ঔষধ বা ডায়াগনস্টিক পরীক্ষা যোগ করুন।',
+  'cart.continueShopping': 'কেনাকাটা চালিয়ে যান',
+  'cart.clearAll': 'সব মুছে ফেলুন',
+  'cart.orderSummary': 'অর্ডার সারসংক্ষেপ',
+  'cart.subtotal': 'উপমোট',
+  'cart.shipping': 'পরিবহন',
+  'cart.free': 'বিনামূল্যে',
+  'cart.total': 'মোট',
+  'cart.checkout': 'চেকআউটে যান',
+  'cart.medicine': 'ঔষধ',
+  'cart.diagnostic': 'ডায়াগনস্টিক পরীক্ষা',
+  'cart.itemAdded': 'আইটেম যোগ হয়েছে',
+  'cart.addedToCart': 'আপনার কার্টে যোগ করা হয়েছে',
 
   'medicine.teleconsult.title': 'প্রেসক্রিপশন প্রয়োজন?',
   'medicine.teleconsult.description': 'ব্যক্তিগতকৃত ঔষধের সুপারিশ এবং ডিজিটাল প্রেসক্রিপশন পেতে ডাঃ সারাহ স্মিথের সাথে পরামর্শ করুন।',
